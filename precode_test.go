@@ -24,7 +24,7 @@ func TestMainHandlerWhenOk(t *testing.T) {
 
 // Город, который передаётся в параметре city, не поддерживается. Сервис возвращает код ответа 400 и ошибку wrong city value в теле ответа.
 func TestMainHandlerCityIsNotSupported(t *testing.T) {
-	req := httptest.NewRequest("GET", "/cafe?city=mosscow", nil)
+	req := httptest.NewRequest("GET", "/cafe?city=moscow", nil)
 	city := req.URL.Query().Get("city")
 	responseRecorder := httptest.NewRecorder()
 	handler := http.HandlerFunc(mainHandle)
